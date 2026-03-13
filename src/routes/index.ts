@@ -4,6 +4,13 @@ import blogRoutes from "./blog.routes";
 
 const router = Router();
 
+router.get("/", (req: Request, res: Response) => {
+  res.status(200).json({
+    success: true,
+    message: "Welcome to the API v1",
+  });
+});
+
 router.get("/health", (_req: Request, res: Response) => {
   res.status(200).json({
     success: true,

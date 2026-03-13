@@ -57,6 +57,18 @@ export const createApp = (): Application => {
   app.use(cookieParser());
 
   // ─── Security ──────────────────────────────────────────────────────────────
+  // Workaround for Express 5 incompatibility with express-mongo-sanitize
+  // Express 5 makes req.query read-only (getter), but express-mongo-sanitize tries to modify it.
+  app.use((req, _res, next) => {
+    Object.defineProperty(req, "query", {
+      value: req.query,
+      writable: true,
+      enumerable: true,
+      configurable: true,
+    });
+    next();
+  });
+
   app.use(mongoSanitize());
   app.use(compression());
 

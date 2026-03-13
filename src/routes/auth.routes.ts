@@ -12,8 +12,11 @@ import {
 const router = Router();
 
 // Public routes
+
 router.post("/register", validate(registerSchema), authController.register);
+
 router.post("/login", validate(loginSchema), authController.login);
+
 router.post(
   "/refresh",
   validate(refreshTokenSchema),
@@ -22,8 +25,11 @@ router.post(
 
 // Protected routes
 router.use(authenticate);
+
 router.post("/logout", authController.logout);
+
 router.get("/me", authController.getProfile);
+
 router.patch(
   "/change-password",
   validate(changePasswordSchema),
