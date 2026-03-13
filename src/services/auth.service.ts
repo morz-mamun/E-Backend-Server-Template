@@ -19,7 +19,7 @@ export const register = async (
   if (existingUser) throw new ConflictError("Email already registered");
 
   const user = await User.create({ name, email, password });
-  const tokens = generateTokenPair(user.id as string, user.email, user.role);
+  const tokens = generateTokenPair(user._id.toString(), user.email, user.role);
 
   await User.findByIdAndUpdate(user._id, { refreshToken: tokens.refreshToken });
 
@@ -38,7 +38,7 @@ export const login = async (
   const isPasswordValid = await user.comparePassword(password);
   if (!isPasswordValid) throw new UnauthorizedError("Invalid credentials");
 
-  const tokens = generateTokenPair(user.id as string, user.email, user.role);
+  const tokens = generateTokenPair(user._id.toString(), user.email, user.role);
   await User.findByIdAndUpdate(user._id, { refreshToken: tokens.refreshToken });
 
   return { user: user.toJSON(), tokens };

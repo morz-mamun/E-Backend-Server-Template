@@ -10,12 +10,12 @@ export const generateTokenPair = (
 ): TokenPair => {
   const payload: Omit<JwtPayload, "iat" | "exp"> = { sub: userId, email, role };
 
-  const accessToken = jwt.sign(payload, env.jwt.accessSecret, {
-    expiresIn: env.jwt.accessExpiresIn,
+  const accessToken = jwt.sign(payload, env.jwt.accessTokenSecret, {
+    expiresIn: env.jwt.accessTokenExpiresIn,
   } as jwt.SignOptions);
 
-  const refreshToken = jwt.sign(payload, env.jwt.refreshSecret, {
-    expiresIn: env.jwt.refreshExpiresIn,
+  const refreshToken = jwt.sign(payload, env.jwt.refreshTokenSecret, {
+    expiresIn: env.jwt.refreshTokenExpiresIn,
   } as jwt.SignOptions);
 
   return { accessToken, refreshToken };
@@ -23,7 +23,7 @@ export const generateTokenPair = (
 
 export const verifyAccessToken = (token: string): JwtPayload => {
   try {
-    return jwt.verify(token, env.jwt.accessSecret) as JwtPayload;
+    return jwt.verify(token, env.jwt.accessTokenSecret) as JwtPayload;
   } catch (err) {
     if (err instanceof jwt.TokenExpiredError) {
       throw new UnauthorizedError("Access token expired");
@@ -34,7 +34,7 @@ export const verifyAccessToken = (token: string): JwtPayload => {
 
 export const verifyRefreshToken = (token: string): JwtPayload => {
   try {
-    return jwt.verify(token, env.jwt.refreshSecret) as JwtPayload;
+    return jwt.verify(token, env.jwt.refreshTokenSecret) as JwtPayload;
   } catch (err) {
     if (err instanceof jwt.TokenExpiredError) {
       throw new UnauthorizedError("Refresh token expired");

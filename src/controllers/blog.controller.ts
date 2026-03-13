@@ -55,7 +55,10 @@ export const getBlogBySlug = async (
   next: NextFunction,
 ): Promise<void> => {
   try {
-    const blog = await blogService.getBlogBySlug(req.params.slug, true);
+    const blog = await blogService.getBlogBySlug(
+      req.params.slug as string,
+      true,
+    );
     sendSuccess(res, blog, "Blog retrieved");
   } catch (err) {
     next(err);
@@ -68,7 +71,7 @@ export const getBlogById = async (
   next: NextFunction,
 ): Promise<void> => {
   try {
-    const blog = await blogService.getBlogById(req.params.id);
+    const blog = await blogService.getBlogById(req.params.id as string);
     sendSuccess(res, blog, "Blog retrieved");
   } catch (err) {
     next(err);
@@ -82,7 +85,7 @@ export const updateBlog = async (
 ): Promise<void> => {
   try {
     const blog = await blogService.updateBlog(
-      req.params.id,
+      req.params.id as string,
       req.user!.sub,
       req.user!.role,
       req.body as Parameters<typeof blogService.updateBlog>[3],
@@ -99,7 +102,11 @@ export const deleteBlog = async (
   next: NextFunction,
 ): Promise<void> => {
   try {
-    await blogService.deleteBlog(req.params.id, req.user!.sub, req.user!.role);
+    await blogService.deleteBlog(
+      req.params.id as string,
+      req.user!.sub,
+      req.user!.role,
+    );
     sendNoContent(res);
   } catch (err) {
     next(err);

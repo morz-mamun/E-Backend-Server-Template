@@ -2,3 +2,19 @@
 {"level":"info","message":"🚀 Server running on port 5000 in development mode","service":"production-api","timestamp":"2026-03-13T20:15:29.136Z"}
 {"level":"info","message":"📍 API: http://localhost:5000/api/v1","service":"production-api","timestamp":"2026-03-13T20:15:29.137Z"}
 {"level":"info","message":"SIGINT received. Starting graceful shutdown...","service":"production-api","timestamp":"2026-03-13T20:15:56.205Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"production-api","timestamp":"2026-03-13T20:40:22.603Z"}
+{"level":"info","message":"🚀 Server running on port 5000 in development mode","service":"production-api","timestamp":"2026-03-13T20:40:22.614Z"}
+{"level":"info","message":"📍 API: http://localhost:5000/api/v1","service":"production-api","timestamp":"2026-03-13T20:40:22.614Z"}
+{"level":"info","message":"SIGTERM received. Starting graceful shutdown...","service":"production-api","timestamp":"2026-03-13T20:41:07.896Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"production-api","timestamp":"2026-03-13T20:41:13.452Z"}
+{"level":"info","message":"🚀 Server running on port 5000 in development mode","service":"production-api","timestamp":"2026-03-13T20:41:13.464Z"}
+{"level":"info","message":"📍 API: http://localhost:5000/api/v1","service":"production-api","timestamp":"2026-03-13T20:41:13.464Z"}
+{"level":"info","message":"SIGINT received. Starting graceful shutdown...","service":"production-api","timestamp":"2026-03-13T20:41:34.433Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"production-api","timestamp":"2026-03-13T20:41:41.921Z"}
+{"level":"info","message":"🚀 Server running on port 5000 in development mode","service":"production-api","timestamp":"2026-03-13T20:41:41.934Z"}
+{"level":"info","message":"📍 API: http://localhost:5000/api/v1","service":"production-api","timestamp":"2026-03-13T20:41:41.934Z"}
+{"level":"info","message":"SIGINT received. Starting graceful shutdown...","service":"production-api","timestamp":"2026-03-13T20:41:48.700Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"production-api","timestamp":"2026-03-13T20:52:22.145Z"}
+{"level":"info","message":"🚀 Server running on port 5000 in development mode","service":"production-api","timestamp":"2026-03-13T20:52:22.156Z"}
+{"level":"info","message":"📍 API: http://localhost:5000/api/v1","service":"production-api","timestamp":"2026-03-13T20:52:22.157Z"}
+{"level":"info","message":"SIGINT received. Starting graceful shutdown...","service":"production-api","timestamp":"2026-03-13T20:52:26.542Z"}
